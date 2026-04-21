@@ -2,9 +2,8 @@ from dataclasses import dataclass, field
 import uuid
 
 
-class 
 
-@dataclass(frozen=true)
+@dataclass(frozen=True)
 class Crianca:
     nome:str
     idade:int

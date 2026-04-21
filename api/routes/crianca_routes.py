@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from domain.CriancaDomain import Crianca
-from schemas.CriancaSchema import CriancaCreate, CriancaOut
+from domain.Crianca_domain import Crianca
+from schemas.crianca_schema import CriancaCreate, CriancaOut
 from services.service import (
     create_crianca,
     list_criancas
@@ -14,5 +14,5 @@ def post_crianca(data:CriancaCreate):
 
 @router.get("/",response_model=list[CriancaOut])
 def get_criancas():
-    return get_criancas()
+    return list_criancas()
 

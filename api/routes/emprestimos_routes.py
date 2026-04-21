@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from schemas.EmprestimoSchema import EmprestimoCreate, EmprestimoOut
+from schemas.emprestimo_schema import EmprestimoCreate, EmprestimoOut
 from services.service import (
     create_emprestimo,
     list_emprestimos,

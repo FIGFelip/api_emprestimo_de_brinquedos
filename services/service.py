@@ -1,6 +1,6 @@
-from domain.CriancaDomain import Crianca
-from domain.BrinquedoDomain import Brinquedo
-from domain.EmprestimoDomain import Emprestimo, multa_input, devolucao_input
+from domain.Crianca_domain import Crianca
+from domain.Brinquedo_domain import Brinquedo
+from domain.Emprestimo_domain import Emprestimo, multa_input, devolucao_input
 from repositories.memory import db
 
 

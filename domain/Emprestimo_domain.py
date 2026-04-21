@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from dataclasses import dataclass, field
 import uuid
 

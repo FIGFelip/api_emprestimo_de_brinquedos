@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from domain.CriancaDomain import Crianca
+from domain.Crianca_domain import Crianca
 import uuid
 @dataclass
 class Brinquedo:
