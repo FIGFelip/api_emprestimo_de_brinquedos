@@ -4,11 +4,14 @@ class CriancaCreate(BaseModel):
     nome:str
     idade:int
     responsavel:str
+    atrasos:int=0
+    bloqueada:bool=False
 
 class CriancaOut(BaseModel):
-    id:int
+    id:str
     nome:str
     idade:int
     responsavel:str
+
 
     

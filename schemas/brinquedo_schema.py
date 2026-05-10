@@ -7,7 +7,7 @@ class BrinquedoCreate(BaseModel):
     disponivel:bool=True
 
 class BrinquedoOut(BaseModel):
-    id:int
+    id:str
     nome:str
     categoria:str
     faixa_etaria_minima:int

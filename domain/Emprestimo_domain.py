@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from datetime import date
 from dataclasses import dataclass, field
 import uuid
 
@@ -12,24 +13,24 @@ class devolucao_input(BaseModel):
 class Emprestimo:
     crianca_id:str
     brinquedo_id:str
-    data_entrada:int
-    data_saida:int
+    data_retirado:date
+    data_entregue:date
     status:str
     multa:float
+    atrasos:int = 0
     id:str=field(default_factory=lambda:str(uuid.uuid4()))
 
     def calcular_multa(self):
-        dias_emprestado = self.data_entrada-self.data_saida
-        atrasos=0
-        if (dias_emprestado)>7:
-            multa = (dias_emprestado*2)
-            atrasos+=1
-            return multa
-        return {"Dentro do limite, sem multa aplicada"}
-
-    def bloquear_crianca(self):
-        if self.atrasos>=3:
-            return {"3 atrasos registrados. criança bloqueada"}
+        delta = self.data_entregue-self.data_retirado
+        dias_totais = delta.days
+        if (dias_totais)>7:
+            dias_atraso = dias_totais-7
+            self.multa = float(dias_atraso*2)
+            self.atrasos+=1
+            return self.multa
+        self.multa=0.0
+        return self.multa
+    
     
     
 

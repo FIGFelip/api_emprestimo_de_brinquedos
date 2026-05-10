@@ -1,7 +1,7 @@
 class memoryDB:
     def __init__(self):
-        self.criancas={}
-        self.brinquedos={}
-        self.emprestimos={}
+        self.criancas_por_id={}
+        self.brinquedos_por_id={}
+        self.emprestimos_por_id={}
 
 db=memoryDB()

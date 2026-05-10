@@ -11,9 +11,9 @@ class Brinquedo:
 
 
     def emprestar(self):
-        if self.disponivel != True:
+        if not self.disponivel:
             raise ValueError("brinquedo indisponivel")
-        disponivel=False
+        self.disponivel=False
     
     
     
